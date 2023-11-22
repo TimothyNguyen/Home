@@ -1,6 +1,7 @@
 import { getProfile } from "@/sanity/sanity.query";
 import type { ProfileType } from "@/types";
 import HeroSvg from "./icons/HeroSvg";
+import Image from "next/image";
 
 export default async function Home() {
   const profile: ProfileType[] = await getProfile();
@@ -11,6 +12,16 @@ export default async function Home() {
         {profile &&
           profile.map((data) => (
             <div key={data._id} className="lg:max-w-2xl max-w-2xl">
+              <Image
+                priority
+                loading="eager"
+                alt="avatar"
+                placeholder="blur"
+                src={data.profileImage.image}
+                width={120}
+                height={120}
+                blurDataURL={data.profileImage.image}
+              />
               <h1 className="text-3xl font-bold tracking-tight sm:text-5xl mb-6 lg:leading-[3.7rem] leading-tight lg:min-w-[700px] min-w-full">
                 {data.headline}
               </h1>
