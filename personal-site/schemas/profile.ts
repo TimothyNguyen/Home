@@ -51,6 +51,12 @@ const profile = {
       type: "string",
     },
     {
+      name: "locationLink",
+      title: "Location Link",
+      type: "url",
+      initialValue: "https://google.com/",
+    },
+    {
       name: "fullBio",
       title: "Full Bio",
       type: "array",

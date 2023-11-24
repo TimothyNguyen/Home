@@ -10,6 +10,7 @@ export async function getProfile() {
       profileImage {alt, "image": asset->url},
       shortBio,
       location,
+      "locationLink": locationLink,
       fullBio,
       email,
       "resumeURL": resumeURL.asset->url,
