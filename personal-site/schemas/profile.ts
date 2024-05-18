@@ -84,18 +84,6 @@ const profile = {
           title: "Linkedin URL",
           type: "url",
           initialValue: "https://linkedin.com/in/",
-        },
-        {
-          name: "youtube",
-          title: "Youtube URL",
-          type: "url",
-          initialValue: "https://www.youtube.com/",
-        },
-        {
-          name: "instagram",
-          title: "Instagram URL",
-          type: "url",
-          initialValue: "https://www.instagram.com/",
         }
       ],
       options: {
