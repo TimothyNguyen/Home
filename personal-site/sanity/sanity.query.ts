@@ -17,7 +17,9 @@ export async function getProfile() {
       email,
       "resumeURL": resumeURL.asset->url,
       socialLinks,
-      skills
+      skills,
+      codingLanguagesFrameworks,
+      codingInfrastructureTools
     }`,
     {},
     { cache: "no-store" }

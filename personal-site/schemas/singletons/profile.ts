@@ -119,6 +119,20 @@ const profile = {
       description: "Add a list of skills",
       of: [{ type: "string" }],
     },
+    {
+      name: "codingLanguagesFrameworks",
+      title: "Languages & Frameworks",
+      type: "array",
+      description: "Add a list of coding languages & frameworks",
+      of: [{ type: "string" }],
+    },
+    {
+      name: "codingInfrastructureTools",
+      title: "Development Tools and Infrastructure",
+      type: "array",
+      description: "Add a list of infrastructure tools",
+      of: [{ type: "string" }],
+    }
  ],
 
 };

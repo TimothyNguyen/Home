@@ -23,4 +23,6 @@ export type ProfileType = {
   resumeURL: string,
   socialLinks: string[],
   skills: string[],
+  codingLanguagesFrameworks: string[],
+  codingInfrastructureTools: string[],
 };
