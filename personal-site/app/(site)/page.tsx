@@ -1,10 +1,15 @@
-import { getProfile } from "@/sanity/sanity.query";
-import type { ProfileType } from "@/types";
+import { getGridItems, getProfile } from "@/sanity/sanity.query";
 import { Mail, MapPin } from "lucide-react";
 import Image from "next/image";
+import { ProfileType } from "@/types/ProfileType";
+import { GridItemType } from "@/types/GridItemType";
+import Social from "@/components/social";
+import GridItem from "@/components/grid-item";
+import { BiFile } from "react-icons/bi";
 
 export default async function Home() {
-  const profile: ProfileType[] = await getProfile();
+  const profile : ProfileType[] = await getProfile();
+  const gridItems : GridItemType[] = await getGridItems();
 
   return (
     <main className="max-w-7xl mx-auto lg:px-16 px-6">
@@ -49,22 +54,24 @@ export default async function Home() {
                   <Mail size="14" />
                   Contact Me
                 </a>
+                <a
+                  href={`${data.resumeURL}?dl=${data.fullName}_resume.pdf`}
+                  className="flex items-center w-full gap-2 px-4 py-2 text-sm font-medium border rounded-md border-neutral-100 dark:border-neutral-800"
+                >
+                  <BiFile className="text-base" /> Download Resumé
+                </a>
               </div>
-              <ul className="flex items-center gap-x-6 my-10">
-                {Object.entries(data.socialLinks)
-                  .sort()
-                  .map(([key, value], id) => (
-                    <li key={id}>
-                      <a
-                        href={value}
-                        rel="noreferer noopener"
-                        className="flex items-center gap-x-3 mb-5 hover:text-purple-400 duration-300"
-                      >
-                        {key[0].toUpperCase() + key.toLowerCase().slice(1)}
-                      </a>
-                    </li>
-                  ))}
-              </ul>
+              <div className="grid w-full grid-cols-4 xl:gap-10 gap-6 xl:py-10 py-6 xl:px-1 xl:overflow-y-auto">
+                {gridItems && gridItems.map((item, index) => (
+                  <GridItem key={item.title + item.type + index} size={item.layout}>
+                    {item.type === "social" ? (
+                      <Social item={item} />
+                    ) : (
+                      <div>Need to create new component type.</div>
+                    )}
+                  </GridItem>
+                ))}
+              </div>
             </div>
           ))}
       </section>

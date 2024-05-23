@@ -4,9 +4,14 @@ import { PortableTextBlock } from "sanity";
 
 export type ProfileType = {
   _id: string,
+  title : string,
   fullName: string,
   headline: string,
   profileImage: {
+    alt: string,
+    image: string
+  },
+  secondaryProfileImage: {
     alt: string,
     image: string
   },

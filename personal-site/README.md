@@ -34,3 +34,14 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+
+Guide to debug: https://nextjs.org/docs/pages/building-your-application/configuring/debugging
+npx kill-port 9229
+
+npm install -g npm@latest
+cd your_project_directory
+rm -rf node_modules
+npm install
+
+https://benhur-martins.medium.com/nextjs-14-and-react-pdf-integration-ccd38b1fd515
