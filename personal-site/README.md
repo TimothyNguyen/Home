@@ -38,3 +38,10 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 Guide to debug: https://nextjs.org/docs/pages/building-your-application/configuring/debugging
 npx kill-port 9229
+
+npm install -g npm@latest
+cd your_project_directory
+rm -rf node_modules
+npm install
+
+https://benhur-martins.medium.com/nextjs-14-and-react-pdf-integration-ccd38b1fd515

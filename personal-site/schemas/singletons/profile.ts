@@ -8,6 +8,12 @@ const profile = {
   icon: BiUser,
   fields: [
     defineField({
+      name: "title",
+      title: "Title",
+      type: "string",
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
       name: "fullName",
       title: "Full Name",
       type: "string",
@@ -25,6 +31,20 @@ const profile = {
       title: "Profile Image",
       type: "image",
       description: "Upload a profile picture",
+      options: { hotspot: true },
+      fields: [
+        {
+          name: "alt",
+          title: "Alt",
+          type: "string",
+        },
+      ],
+    },
+    {
+      name: "secondaryProfileImage",
+      title: "Secondary Profile Image",
+      type: "image",
+      description: "Upload a secondary profile picture",
       options: { hotspot: true },
       fields: [
         {
