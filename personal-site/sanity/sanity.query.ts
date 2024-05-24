@@ -17,10 +17,11 @@ export async function getProfile() {
       email,
       "resumeURL": resumeURL.asset->url,
       socialLinks,
-      skills
-    }`,
-    {},
-    { cache: "no-store" }
+      skills,
+      codingLanguagesFrameworks,
+      codingInfrastructureTools,
+      "timeline": timeline.items
+    }`
   );
 }
 
@@ -42,8 +43,6 @@ export async function getGridItems() {
       oldPrice,
       stars,
       "imageUrl": image.asset->url
-    }`,
-    {},
-    { cache: "no-store" }
+    }`
   );
 }

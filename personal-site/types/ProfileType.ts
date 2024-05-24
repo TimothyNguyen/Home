@@ -1,6 +1,7 @@
 // types/index.ts
 
 import { PortableTextBlock } from "sanity";
+import { TimelineItemType } from "./TimelineItemType";
 
 export type ProfileType = {
   _id: string,
@@ -23,4 +24,7 @@ export type ProfileType = {
   resumeURL: string,
   socialLinks: string[],
   skills: string[],
+  codingLanguagesFrameworks: string[],
+  codingInfrastructureTools: string[],
+  timeline: any
 };
