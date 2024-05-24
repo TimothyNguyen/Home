@@ -1,4 +1,4 @@
-import { defineField } from "sanity";
+import { defineArrayMember, defineField } from "sanity";
 import { BiUser } from "react-icons/bi";
 
 const profile = {
@@ -132,7 +132,12 @@ const profile = {
       type: "array",
       description: "Add a list of infrastructure tools",
       of: [{ type: "string" }],
-    }
+    },
+    // Custom blocks
+    defineArrayMember({
+      name: 'timeline',
+      type: 'timeline',
+    }),
  ],
 
 };

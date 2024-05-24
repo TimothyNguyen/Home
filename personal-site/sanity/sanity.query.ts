@@ -19,10 +19,9 @@ export async function getProfile() {
       socialLinks,
       skills,
       codingLanguagesFrameworks,
-      codingInfrastructureTools
-    }`,
-    {},
-    { cache: "no-store" }
+      codingInfrastructureTools,
+      "timeline": timeline.items
+    }`
   );
 }
 
@@ -44,8 +43,6 @@ export async function getGridItems() {
       oldPrice,
       stars,
       "imageUrl": image.asset->url
-    }`,
-    {},
-    { cache: "no-store" }
+    }`
   );
 }

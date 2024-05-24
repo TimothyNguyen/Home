@@ -3,6 +3,7 @@ import { getProfile } from "@/sanity/sanity.query";
 import { PortableText } from "@portabletext/react";
 import { BiEnvelope, BiFile } from "react-icons/bi";
 import { ProfileType } from "@/types/ProfileType";
+import { TimelineSection } from "@/components/TimelineSection";
 
 export default async function About() {
   const profile: ProfileType[] = await getProfile();
@@ -55,6 +56,7 @@ export default async function About() {
                 </ul>
               </div>
             </section>
+            <TimelineSection timelines={data.timeline} />
           </div>
         ))}
     </main>
